@@ -49,19 +49,50 @@ def test_part_one_4():
 
     assert part_one(input) == 92
 
-@pytest.mark.skip()
 def test_part_two():
     input = []
     with open("data/three.txt", "r") as file:
-        line = file.readline()
-        input.append(line.strip())
+        for line in file.readlines():
+            input.append(line.strip())
 
-    assert part_two(input) == 0
+    assert part_two(input) == 171528556468625
 
-@pytest.mark.skip()
 def test_part_two_example():
     input = [
-        ""
+        "987654321111111",
+        "811111111111119",
+        "234234234234278",
+        "818181911112111"
     ]
 
-    assert part_two(input) == 0
+    assert part_two(input) == 3121910778619
+
+def test_part_two_1():
+    input = [
+        "987654321111111",
+    ]
+
+    assert part_two(input) == 987654321111
+
+
+def test_part_two_2():
+    input = [
+        "811111111111119",
+    ]
+
+    assert part_two(input) == 811111111119
+
+def test_part_two_3():
+    input = [
+        "234234234234278",
+    ]
+
+    assert part_two(input) == 434234234278
+
+def test_part_two_4():
+    input = [
+        "818181911112111"
+    ]
+
+    assert part_two(input) == 888911112111
+

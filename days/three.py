@@ -24,5 +24,33 @@ def part_one(input: list[str]) -> int:
 
     return total
 
+
+def find_max(bank: str, start: int, end: int) -> tuple[str, int]:
+    curr_max = (0, 0)
+
+    for i, battery in enumerate(bank[start:end]):
+        joltage = int(battery)
+        if joltage > curr_max[0]:
+            curr_max = (joltage, start+i)
+
+    return (str(curr_max[0]), curr_max[1])
+
 def part_two(input: list[str]) -> int:
-    pass
+    banks = []
+    MAX_BANK_LEN = 12
+    for bank in input:
+        ans_bank = ""
+        total_banks = 0
+        bank_len = len(bank)
+        index = 0
+
+        while total_banks < MAX_BANK_LEN:
+            # +1 to include the 12th from the last character in the comparison
+            joltage, index = find_max(bank, index, bank_len-(MAX_BANK_LEN-total_banks)+1)
+            ans_bank += joltage
+            total_banks += 1
+            index += 1
+
+        banks.append(int(ans_bank))
+
+    return sum(banks)
