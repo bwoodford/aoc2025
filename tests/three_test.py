@@ -1,6 +1,7 @@
 import pytest
 from days.three import part_one, part_two
 
+
 def test_part_one():
     input = []
     with open("data/three.txt", "r") as file:
@@ -11,14 +12,10 @@ def test_part_one():
 
 
 def test_part_one_example():
-    input = [
-        "987654321111111",
-        "811111111111119",
-        "234234234234278",
-        "818181911112111"
-    ]
+    input = ["987654321111111", "811111111111119", "234234234234278", "818181911112111"]
 
     assert part_one(input) == 357
+
 
 def test_part_one_1():
     input = [
@@ -35,6 +32,7 @@ def test_part_one_2():
 
     assert part_one(input) == 89
 
+
 def test_part_one_3():
     input = [
         "234234234234278",
@@ -42,12 +40,12 @@ def test_part_one_3():
 
     assert part_one(input) == 78
 
+
 def test_part_one_4():
-    input = [
-        "818181911112111"
-    ]
+    input = ["818181911112111"]
 
     assert part_one(input) == 92
+
 
 def test_part_two():
     input = []
@@ -57,15 +55,12 @@ def test_part_two():
 
     assert part_two(input) == 171528556468625
 
+
 def test_part_two_example():
-    input = [
-        "987654321111111",
-        "811111111111119",
-        "234234234234278",
-        "818181911112111"
-    ]
+    input = ["987654321111111", "811111111111119", "234234234234278", "818181911112111"]
 
     assert part_two(input) == 3121910778619
+
 
 def test_part_two_1():
     input = [
@@ -82,6 +77,7 @@ def test_part_two_2():
 
     assert part_two(input) == 811111111119
 
+
 def test_part_two_3():
     input = [
         "234234234234278",
@@ -89,10 +85,8 @@ def test_part_two_3():
 
     assert part_two(input) == 434234234278
 
+
 def test_part_two_4():
-    input = [
-        "818181911112111"
-    ]
+    input = ["818181911112111"]
 
     assert part_two(input) == 888911112111
-

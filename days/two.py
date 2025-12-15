@@ -4,6 +4,7 @@ import math
 def is_even(number):
     return number % 2 == 0
 
+
 def find_factors(number):
     factors = []
     limit = int(number**0.5)
@@ -41,6 +42,7 @@ def get_pattern(factor: int, number: str):
         return number[0]
     return number[:factor]
 
+
 def part_two(input: list[tuple]) -> int:
     total = 0
 
@@ -57,7 +59,7 @@ def part_two(input: list[tuple]) -> int:
                     factor = factors[i]
                     pattern = get_pattern(factor, str_num)
                     for j in range(factor, num_len, factor):
-                        if pattern != str_num[j:factor+j]:
+                        if pattern != str_num[j : factor + j]:
                             matches = False
                             break
 

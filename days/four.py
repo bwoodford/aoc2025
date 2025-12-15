@@ -1,6 +1,4 @@
-
 def part_one(input: list[list[str]]) -> int:
-
     MAX_ROLLS = 3
     PAPER = "@"
     accessed = 0
@@ -9,7 +7,6 @@ def part_one(input: list[list[str]]) -> int:
 
     for i in range(len_rows):
         for j in range(len_cols):
-
             if input[i][j] != PAPER:
                 continue
 
@@ -17,7 +14,6 @@ def part_one(input: list[list[str]]) -> int:
 
             for dr in range(-1, 2):
                 for dc in range(-1, 2):
-
                     # Skip the current item we're testing from
                     if dr == 0 and dc == 0:
                         continue
@@ -37,8 +33,6 @@ def part_one(input: list[list[str]]) -> int:
                 accessed += 1
 
     return accessed
-
-
 
 
 def part_two(input: list[list[str]]) -> int:

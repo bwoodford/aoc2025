@@ -11,6 +11,7 @@ def test_part_one():
 
     assert part_one(input) == 964
 
+
 def test_part_two():
     input = []
     with open("data/one.txt", "r") as file:
@@ -76,5 +77,3 @@ def test_part_two_8():
 
 def test_part_two_9():
     assert part_two([("R", 1000)]) == 10
-
-

@@ -1,6 +1,7 @@
 import pytest
 from days.four import part_one, part_two
 
+
 def test_part_one():
     input = []
     with open("data/four.txt", "r") as file:
@@ -11,6 +12,7 @@ def test_part_one():
                 row.append(position)
             input.append(row)
     assert part_one(input) == 1495
+
 
 def test_part_one_example():
     input = [
@@ -23,9 +25,10 @@ def test_part_one_example():
         [".", "@", ".", "@", ".", "@", ".", "@", "@", "@"],
         ["@", ".", "@", "@", "@", ".", "@", "@", "@", "@"],
         [".", "@", "@", "@", "@", "@", "@", "@", "@", "."],
-        ["@", ".", "@", ".", "@", "@", "@", ".", "@", "."]
+        ["@", ".", "@", ".", "@", "@", "@", ".", "@", "."],
     ]
     assert part_one(input) == 13
+
 
 @pytest.mark.skip()
 def test_part_two():
@@ -39,6 +42,7 @@ def test_part_two():
             input.append(row)
     assert part_two(input) == 0
 
+
 @pytest.mark.skip()
 def test_part_two_example():
     input = [
@@ -51,6 +55,6 @@ def test_part_two_example():
         [".", "@", ".", "@", ".", "@", ".", "@", "@", "@"],
         ["@", ".", "@", "@", "@", ".", "@", "@", "@", "@"],
         [".", "@", "@", "@", "@", "@", "@", "@", "@", "."],
-        ["@", ".", "@", ".", "@", "@", "@", ".", "@", "."]
+        ["@", ".", "@", ".", "@", "@", "@", ".", "@", "."],
     ]
     assert part_two(input) == 0

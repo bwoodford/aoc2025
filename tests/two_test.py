@@ -45,6 +45,7 @@ def test_part_two():
 
     assert part_two(input) == 20942028255
 
+
 def test_part_two_example():
     input = [
         (11, 22),
@@ -70,6 +71,7 @@ def test_part_two_1():
 
     assert part_two(input) == 33
 
+
 def test_part_two_2():
     input = [
         (95, 115),
@@ -82,6 +84,7 @@ def test_part_two_3():
         (998, 1012),
     ]
     assert part_two(input) == 2009
+
 
 def test_part_two_4():
     input = [
@@ -96,11 +99,13 @@ def test_part_two_5():
     ]
     assert part_two(input) == 222222
 
+
 def test_part_two_6():
     input = [
         (1698522, 1698528),
     ]
     assert part_two(input) == 0
+
 
 def test_part_two_7():
     input = [
@@ -108,11 +113,13 @@ def test_part_two_7():
     ]
     assert part_two(input) == 446446
 
+
 def test_part_two_8():
     input = [
         (38593856, 38593862),
     ]
     assert part_two(input) == 38593859
+
 
 def test_part_two_9():
     input = [
@@ -120,11 +127,13 @@ def test_part_two_9():
     ]
     assert part_two(input) == 565656
 
+
 def test_part_two_10():
     input = [
         (824824821, 824824827),
     ]
     assert part_two(input) == 824824824
+
 
 def test_part_two_11():
     input = [
@@ -138,4 +147,3 @@ def test_part_two_11():
         (2121212121, 2121212121),
     ]
     assert part_two(input) == 2121212121
-
