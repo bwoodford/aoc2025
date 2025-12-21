@@ -30,7 +30,6 @@ def test_part_one_example():
     assert part_one(input) == 13
 
 
-@pytest.mark.skip()
 def test_part_two():
     input = []
     with open("data/four.txt", "r") as file:
@@ -40,10 +39,9 @@ def test_part_two():
             for position in positions:
                 row.append(position)
             input.append(row)
-    assert part_two(input) == 0
+    assert part_two(input) == 8768
 
 
-@pytest.mark.skip()
 def test_part_two_example():
     input = [
         [".", ".", "@", "@", ".", "@", "@", "@", "@", "."],
@@ -57,4 +55,4 @@ def test_part_two_example():
         [".", "@", "@", "@", "@", "@", "@", "@", "@", "."],
         ["@", ".", "@", ".", "@", "@", "@", ".", "@", "."],
     ]
-    assert part_two(input) == 0
+    assert part_two(input) == 43
