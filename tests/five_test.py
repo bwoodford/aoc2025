@@ -1,3 +1,4 @@
+import pytest
 from days.five import part_one, part_two
 
 
@@ -25,7 +26,7 @@ def test_part_one():
 
 
 def test_part_one_example():
-    ranges = [(3,5), (10,14), (16,20), (12,18)]
+    ranges = [(3, 5), (10, 14), (16, 20), (12, 18)]
     input = [1, 5, 8, 11, 17, 32]
     assert part_one(ranges, input) == 3
 
@@ -33,11 +34,18 @@ def test_part_one_example():
 def test_part_two():
     input = []
     with open("data/five.txt", "r") as file:
-        pass
-    assert part_two(input) == 0
+        for line in file.readlines():
+            line = line.strip()
+
+            if line == "":
+                break
+
+            line_split = line.split("-")
+            input.append((int(line_split[0]), int(line_split[1])))
+
+    assert part_two(input) == 348548952146313
 
 
 def test_part_two_example():
-    input = [
-    ]
-    assert part_two(input) == 0
+    input = [(3, 5), (10, 14), (16, 20), (12, 18)]
+    assert part_two(input) == 14
