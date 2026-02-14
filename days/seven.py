@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 def part_one(input: list[str]) -> int:
 
     if len(input) == 0:
@@ -35,7 +37,8 @@ def part_two(input: list[str]) -> int:
         return 0
 
     s_index = next(i for i, val in enumerate(input[0]) if val == "S")
-    path_dict = {s_index: 1}
+    path_dict = defaultdict(int)
+    path_dict[s_index] = 1
 
     for i, row in enumerate(input[1:]):
         splitters = set(i for i, val in enumerate(row) if val == "^")
@@ -43,25 +46,14 @@ def part_two(input: list[str]) -> int:
         if len(splitters) == 0:
             continue
 
-        buff_dict = {}
+        buff_dict = defaultdict(int)
         for (path, timelines) in path_dict.items():
 
             if path not in splitters:
-                if path not in buff_dict:
-                    buff_dict[path] = timelines
-                else:
-                    buff_dict[path] += timelines
-
+                buff_dict[path] += timelines
             else:
-                if path-1 not in buff_dict:
-                    buff_dict[path-1] = timelines
-                else:
-                    buff_dict[path-1] += timelines
-
-                if path+1 not in buff_dict:
-                    buff_dict[path+1] = timelines
-                else:
-                    buff_dict[path+1] += timelines
+                buff_dict[path-1] += timelines
+                buff_dict[path+1] += timelines
 
         path_dict = buff_dict
 
