@@ -3,6 +3,7 @@ def op(operation: str, a: int, b: int) -> int:
         return a * b
     return a + b
 
+
 def part_one(input: list[list[str]]) -> int:
     cols = len(input[0])
     rows = len(input)
@@ -10,13 +11,13 @@ def part_one(input: list[list[str]]) -> int:
 
     for col in range(cols):
         row_total = int(input[0][col])
-        for row in range(1, rows-1):
+        for row in range(1, rows - 1):
             row_total = op(input[-1][col], row_total, int(input[row][col]))
         total += row_total
     return total
 
-def part_two(input: list[str]) -> int:
 
+def part_two(input: list[str]) -> int:
     if len(input) == 0:
         return 0
 
@@ -26,10 +27,10 @@ def part_two(input: list[str]) -> int:
     parsed_input = []
     buff_input = []
 
-    for i in range(cols-1, -1, -1):
+    for i in range(cols - 1, -1, -1):
         buff = ""
 
-        for j in range(rows-1):
+        for j in range(rows - 1):
             buff += input[j][i]
 
         buff = buff.replace(" ", "")
@@ -41,7 +42,7 @@ def part_two(input: list[str]) -> int:
             parsed_input.append(buff_input)
             buff_input = []
 
-    operations = [i for i in input[rows-1].replace(" ", "")]
+    operations = [i for i in input[rows - 1].replace(" ", "")]
     operations.reverse()
 
     total = 0

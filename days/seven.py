@@ -1,7 +1,7 @@
 from collections import defaultdict
 
-def part_one(input: list[str]) -> int:
 
+def part_one(input: list[str]) -> int:
     if len(input) == 0:
         return 0
 
@@ -23,16 +23,16 @@ def part_one(input: list[str]) -> int:
         new_beams = set()
         for split in intersect:
             if split > 0:
-                new_beams.add(split-1)
-            if split < line_len-1:
-                new_beams.add(split+1)
+                new_beams.add(split - 1)
+            if split < line_len - 1:
+                new_beams.add(split + 1)
 
         beams = new_beams.union(difference)
 
     return total
 
-def part_two(input: list[str]) -> int:
 
+def part_two(input: list[str]) -> int:
     if len(input) == 0:
         return 0
 
@@ -47,13 +47,12 @@ def part_two(input: list[str]) -> int:
             continue
 
         buff_dict = defaultdict(int)
-        for (path, timelines) in path_dict.items():
-
+        for path, timelines in path_dict.items():
             if path not in splitters:
                 buff_dict[path] += timelines
             else:
-                buff_dict[path-1] += timelines
-                buff_dict[path+1] += timelines
+                buff_dict[path - 1] += timelines
+                buff_dict[path + 1] += timelines
 
         path_dict = buff_dict
 

@@ -10,12 +10,13 @@ def test_part_one():
 
     assert part_one(input) == 5060053676136
 
+
 def test_part_one_example():
     input = [
         ["123", "328", "51", "64"],
         ["45", "64", "387", "23"],
         ["6", "98", "215", "314"],
-        ["*", "+", "*", "+"]
+        ["*", "+", "*", "+"],
     ]
 
     assert part_one(input) == 4277556
@@ -29,8 +30,8 @@ def test_part_two():
 
     assert part_two(input) == 9695042567249
 
-def test_part_two_example():
 
+def test_part_two_example():
     input = [
         "123 328  51 64 ",
         " 45 64  387 23 ",
