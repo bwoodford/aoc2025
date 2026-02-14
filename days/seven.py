@@ -40,7 +40,7 @@ def part_two(input: list[str]) -> int:
     path_dict = defaultdict(int)
     path_dict[s_index] = 1
 
-    for i, row in enumerate(input[1:]):
+    for row in input[1:]:
         splitters = set(i for i, val in enumerate(row) if val == "^")
 
         if len(splitters) == 0:
